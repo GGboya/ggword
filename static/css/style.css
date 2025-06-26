@@ -1,0 +1,658 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 头部样式 */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.header h1 i {
+    color: #ffd700;
+    margin-right: 15px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* 导航标签样式 */
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tab-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.tab-btn.active {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.tab-btn i {
+    margin-right: 8px;
+}
+
+/* 主内容区域 */
+.main-content {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    min-height: 600px;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 搜索栏样式 */
+.search-bar {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 15px 50px 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.search-bar i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+/* 过滤选项 */
+.filter-options {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-options select {
+    padding: 10px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    background: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-options select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* 单词列表样式 */
+.words-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.word-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border-left: 5px solid #667eea;
+    position: relative;
+    overflow: hidden;
+}
+
+.word-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.word-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.word-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.word-english {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.word-difficulty {
+    font-size: 0.9rem;
+    color: #ffa500;
+}
+
+.word-chinese {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.word-pronunciation {
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.word-example {
+    font-size: 0.9rem;
+    color: #777;
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 3px solid #667eea;
+}
+
+.word-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #999;
+    margin-bottom: 15px;
+}
+
+.word-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-icon:hover {
+    background: #f0f0f0;
+    transform: scale(1.1);
+}
+
+.btn-icon.edit { color: #28a745; }
+.btn-icon.delete { color: #dc3545; }
+.btn-icon.review { color: #007bff; }
+
+/* 表单样式 */
+.word-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* 按钮样式 */
+.btn-primary,
+.btn-secondary,
+.btn-success,
+.btn-danger {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #545b62;
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: #28a745;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #218838;
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+}
+
+/* 练习模式样式 */
+.practice-mode {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.practice-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.practice-card {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.practice-question h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.practice-question p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.practice-answer h4 {
+    font-size: 2rem;
+    color: #28a745;
+    margin-bottom: 15px;
+}
+
+.practice-answer p {
+    font-size: 1rem;
+    color: #666;
+    font-style: italic;
+}
+
+.practice-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.practice-progress {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 600;
+}
+
+/* 统计信息样式 */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.difficulty-chart {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.difficulty-chart h3 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.chart-bars {
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+    height: 200px;
+    gap: 10px;
+}
+
+.chart-bar {
+    background: linear-gradient(to top, #667eea, #764ba2);
+    border-radius: 5px 5px 0 0;
+    min-width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.chart-bar:hover {
+    transform: scale(1.05);
+}
+
+.chart-bar-label {
+    margin-top: 10px;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+/* 模态框样式 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.modal h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* 通知样式 */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #28a745;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 1001;
+    animation: slideIn 0.3s ease;
+}
+
+.notification.error {
+    background: #dc3545;
+}
+
+.notification.warning {
+    background: #ffc107;
+    color: #333;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* 隐藏元素 */
+.hidden {
+    display: none !important;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .nav-tabs {
+        gap: 5px;
+    }
+    
+    .tab-btn {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .main-content {
+        padding: 20px;
+    }
+    
+    .words-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .practice-card {
+        padding: 25px;
+    }
+    
+    .practice-question h3 {
+        font-size: 2rem;
+    }
+    
+    .practice-controls {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .modal-content {
+        margin: 20px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-options {
+        flex-direction: column;
+    }
+    
+    .word-actions {
+        justify-content: center;
+    }
+    
+    .practice-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .practice-buttons button {
+        width: 200px;
+    }
+} 

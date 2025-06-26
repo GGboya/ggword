@@ -1,0 +1,76 @@
+[
+  {
+    "id": 1,
+    "english": "Hello",
+    "chinese": "你好",
+    "pronunciation": "/həˈloʊ/",
+    "example": "Hello, how are you?",
+    "created_at": "2025-06-26T15:01:06.252165+08:00",
+    "review_count": 1,
+    "difficulty": 1
+  },
+  {
+    "id": 2,
+    "english": "World",
+    "chinese": "世界",
+    "pronunciation": "/wɜːrld/",
+    "example": "Welcome to the world of programming.",
+    "created_at": "2025-06-26T15:01:06.252165+08:00",
+    "review_count": 1,
+    "difficulty": 2
+  },
+  {
+    "id": 3,
+    "english": "Command line interfaces",
+    "chinese": "命令行界面",
+    "example": "Command line interfaces can seem alien at first",
+    "created_at": "2025-06-26T15:05:06.924838+08:00",
+    "review_count": 0,
+    "difficulty": 3
+  },
+  {
+    "id": 4,
+    "english": "take actions",
+    "chinese": "操作",
+    "example": "draw parallels between using the command line and actions that you would normally take while using your mouse and keyboard",
+    "created_at": "2025-06-26T15:14:17.055717+08:00",
+    "review_count": 0,
+    "difficulty": 3
+  },
+  {
+    "id": 5,
+    "english": "little pieces of software",
+    "chinese": "小程序",
+    "example": "You will also learn how to write little pieces of software in a programming language called Bash",
+    "created_at": "2025-06-26T15:17:00.66058+08:00",
+    "review_count": 0,
+    "difficulty": 3
+  },
+  {
+    "id": 6,
+    "english": "connect together",
+    "chinese": "串联起来",
+    "example": "You will also learn how to write little pieces of software in a programming language called Bash, which allows you to connect together the tools we will discuss",
+    "created_at": "2025-06-26T15:18:58.618277+08:00",
+    "review_count": 0,
+    "difficulty": 3
+  },
+  {
+    "id": 7,
+    "english": "as if they are ",
+    "chinese": "就像（不需要翻译 they are 或者 he is 等等）",
+    "example": "My hope is that by the end of this book you be able to use different Unix tools as if they are interconnecting Lego bricks.",
+    "created_at": "2025-06-26T15:23:32.232329+08:00",
+    "review_count": 0,
+    "difficulty": 3
+  },
+  {
+    "id": 8,
+    "english": "interconnecting Lego bricks",
+    "chinese": "拼接乐高积木",
+    "example": "My hope is that by the end of this book you be able to use different Unix tools as if they are interconnecting Lego bricks.\n",
+    "created_at": "2025-06-26T15:25:42.059606+08:00",
+    "review_count": 0,
+    "difficulty": 3
+  }
+]
